@@ -1,0 +1,55 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dce3d5; /* Light green background */
+}
+
+/* Header Styles */
+header {
+    background-color: #2e221e; /* Dark brown background for the header */
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 24px;
+    background-color: #9ca88e; /* Slightly light brown for logo background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffc107; /* Add hover effect for links */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
