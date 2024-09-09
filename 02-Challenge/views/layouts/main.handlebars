@@ -8,6 +8,18 @@
 </head>
 <body>
     <header>
+        {{#if logged_in}}
+        <nav class="navbar">
+            <div class="logo">
+                <h1>The Tech Blog</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </nav>
+        {{else}}
         <nav class="navbar">
             <div class="logo">
                 <h1>The Tech Blog</h1>
@@ -16,14 +28,15 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/login">Login</a></li>
-                <li><a href="/logout">Logout</a></li>
             </ul>
         </nav>
+        {{/if}}
     </header>
-
     <main>
-        {{{body}}} 
+        {{{body}}}
     </main>
-
+    {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>
