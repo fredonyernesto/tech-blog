@@ -1,3 +1,5 @@
+
+
 const createPostHandler = async (event) => {
     event.preventDefault();
 
@@ -41,7 +43,9 @@ const updateButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/posts/${id}`);
+        const response = await fetch(`/api/posts/${id}`, {
+            method: 'GET',
+        });
         if (response.ok) {
             const postData = await response.json();
 
@@ -66,6 +70,7 @@ const updatePostHandler = async (event) => {
     const title = document.querySelector('#update-post-title').value.trim();
     const content = document.querySelector('#update-post-content').value.trim();
     const id = document.querySelector('#update-post-form').getAttribute('data-id');
+
     if (title && content && id) {
         const response = await fetch(`/api/posts/${id}`, {
             method: 'PUT',
