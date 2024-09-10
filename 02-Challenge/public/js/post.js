@@ -1,5 +1,3 @@
-
-
 const createPostHandler = async (event) => {
     event.preventDefault();
 
@@ -46,17 +44,12 @@ const updateButtonHandler = async (event) => {
         const response = await fetch(`/api/posts/${id}`, {
             method: 'GET',
         });
+        
         if (response.ok) {
             const postData = await response.json();
-
-            // Populate form with existing post data
             document.querySelector('#update-post-title').value = postData.title;
             document.querySelector('#update-post-content').value = postData.content;
-
-            // Store the post ID in the form for later use
             document.querySelector('#update-post-form').setAttribute('data-id', id);
-
-            // Show the update form
             document.querySelector('#update-post-form-container').classList.remove('hidden');
         } else {
             alert('Failed to load post data');
@@ -88,17 +81,14 @@ const updatePostHandler = async (event) => {
     }
 };
 
-// Toggle new post form visibility
 document.querySelector('.new-post-button').addEventListener('click', (event) => {
     event.preventDefault();
     const formContainer = document.querySelector('#new-post-form-container');
     formContainer.classList.toggle('hidden');
 });
 
-// Handle new post form submission
 document.querySelector('#new-post-form').addEventListener('submit', createPostHandler);
 
-// Handle delete and update buttons in the dashboard
 document.querySelector('.dashboard-container').addEventListener('click', (event) => {
     if (event.target.matches('.delete-comments-button')) {
         delButtonHandler(event);
@@ -107,10 +97,8 @@ document.querySelector('.dashboard-container').addEventListener('click', (event)
     }
 });
 
-// Handle update post form submission
 document.querySelector('#update-post-form').addEventListener('submit', updatePostHandler);
 
-// Cancel update form visibility
 document.querySelector('.cancel-update-button').addEventListener('click', () => {
     document.querySelector('#update-post-form-container').classList.add('hidden');
 });

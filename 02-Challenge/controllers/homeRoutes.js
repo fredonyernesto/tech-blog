@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -58,6 +58,37 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/views/:id', withAuth, async (req, res) => {
+    try {
+        const viewData = await Post.findOne({
+            where: { id: req.params.id },
+            include: [
+                {
+                    model: User,
+                    attributes: ['name']
+                },
+                {
+                    model: Comments,
+                    attributes: ['content'],
+                },
+            ],
+        });
+
+        if (!viewData) {
+            res.status(404).json({ message: 'No post found with this id!' });
+            return;
+        }
+
+        res.render('view', {
+            ...viewData.get({ plain: true }), // Use viewData, not post
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

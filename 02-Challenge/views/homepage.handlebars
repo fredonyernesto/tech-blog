@@ -4,9 +4,12 @@
             <div class="homepage-post-box">
                 <div class="post-header">
                     <h2>{{this.title}}</h2>
+                    <div>
+                        {{this.User.name}} {{this.createdAt}}
+                    </div>
                 </div>
                 <p>{{this.content}}</p>
-                <a href="/post/{{this.id}}" class="view-comments-button">View Comments</a>
+                <a href="/views/{{this.id}}" class="view-comments-button" data-id="{{this.id}}">View Comments</a>
             </div>
         {{/each}}
     {{else}}

@@ -1,0 +1,22 @@
+<main class="post-container">
+    <div class="post-box">
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+    </div>
+
+    <section class="comments-section">
+        <h2>Comments</h2>
+        
+        {{#if comments.length}}
+            <ul class="comments-list">
+                {{#each comments}}
+                    <li>
+                        <p>{{this.content}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No comments found for this post.</p>
+        {{/if}}
+    </section>
+</main>
