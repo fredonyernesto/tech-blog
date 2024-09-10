@@ -53,7 +53,7 @@ main {
 }
 
 .post-box,
-.homepage-post-box {
+.post-entry-box {
     background-color: #fff;
     border: 2px solid #523956;
     padding: 20px;
@@ -74,7 +74,7 @@ main {
 }
 
 .post-box h2,
-.homepage-post-box h2 {
+.post-entry-box h2 {
     margin-left: 10px;
 }
 
@@ -98,8 +98,8 @@ main {
 
 .post-box:hover .update-comments-button,
 .post-box:hover .delete-comments-button,
-.homepage-post-box:hover .update-comments-button,
-.homepage-post-box:hover .delete-comments-button {
+.post-entry-box:hover .update-comments-button,
+.post-entry-box:hover .delete-comments-button {
     display: inline-block;
 }
 
@@ -200,7 +200,7 @@ main {
     transition: background-color 0.3s ease-in-out;
 }
 
-.homepage-post-box:hover .view-comments-button {
+.post-entry-box:hover .view-comments-button {
     display: inline-block;
 }
 
@@ -270,4 +270,16 @@ main {
 
 .cancel-update-button:hover {
     background-color: #888;
+}
+
+.user-post-info{
+    color:  rgb(211, 211, 211);
+    font-weight: lighter;
+    font-variant: small-caps;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-right: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }

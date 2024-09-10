@@ -64,7 +64,7 @@ router.put('/:id', withAuth, async (req, res) => {
         });
 
         if (updated) {
-            res.status(200).json({ message: 'Post updated successfully' });
+            res.status(200).json({ message: 'Post updated succeFssfully' });
         } else {
             res.status(404).json({ message: 'No post found with this id!' });
         }

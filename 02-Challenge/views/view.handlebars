@@ -1,22 +1,27 @@
 <main class="post-container">
-    <div class="post-box">
-        <h1>{{title}}</h1>
-        <p>{{content}}</p>
+    <div class="post-entry-box">
+        <div class="post-header">
+            <h2>{{this.title}}</h2>
+            <div class="user-post-info">
+               <h3>{{this.user.name}} ● {{format_date this.createdAt}}</h3>
+            </div>
+        </div>
+        <p>{{this.content}}</p>
     </div>
 
     <section class="comments-section">
         <h2>Comments</h2>
-        
+
         {{#if comments.length}}
-            <ul class="comments-list">
-                {{#each comments}}
-                    <li>
-                        <p>{{this.content}}</p>
-                    </li>
-                {{/each}}
-            </ul>
+        <ul class="comments-list">
+            {{#each comments}}
+            <li>
+                <p>{{this.content}}</p>
+            </li>
+            {{/each}}
+        </ul>
         {{else}}
-            <p>No comments found for this post.</p>
+        <p>No comments found for this post.</p>
         {{/if}}
     </section>
 </main>
