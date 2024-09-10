@@ -12,9 +12,12 @@ router.get('/', async (req, res) => {
                 }
             ]
         });
+        console.log("OVER HERE!")
+        console.log(JSON.stringify(postData, null, 2)); 
 
         if (postData.length > 0) {
             const posts = postData.map(post => post.get({ plain: true }));
+            
             return res.render('homepage', {
                 posts,
                 logged_in: req.session.logged_in
