@@ -1,9 +1,11 @@
 const withAuth = (req, res, next) => {
   if (!req.session.logged_in) {
-    res.redirect('/login');
+    // alert('Please login or signup first.')
+    res.redirect('/');
   } else {
     next();
   }
 };
 
 module.exports = withAuth;
+ 
