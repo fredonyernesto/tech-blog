@@ -55,11 +55,3 @@ For questions or feedback, email [fredony.ernesto@gmail.com](mailto:fredony.erne
 
 Access the project repository [here](httpsgit://github.com/fredonyernesto/tech-blog).
 
-## Walkthrough Video
-
-Watch the walkthrough video [here](https://link-to-your-video).
-
-## Screenshots
-
-![Tech Blog Screenshot](link-to-screenshot.png)
-
