@@ -18,6 +18,11 @@
             <li>
                 <p>{{this.content}}</p>
             </li>
+            <button id='comment'>Comment?</button>
+           <div id='leave-a-comment' className="leave-a-comment hidden">
+                          <label htmlFor="comment-here">comment</label>
+                          <textarea name="comment-here"></textarea>
+                        </div>
             {{/each}}
         </ul>
         {{else}}
